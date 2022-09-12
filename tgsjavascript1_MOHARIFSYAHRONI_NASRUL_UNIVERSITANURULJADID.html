@@ -1,0 +1,79 @@
+<body align="center">
+	<script language="javascript">
+		var name = "Moharifsyahroni";
+		var jabatan ="manager";
+		var status = "menikah";
+		document.write( "NAMA: " + name +
+		"<br/>JABATAN: " + jabatan +
+		"<br/>STATUS: " + status);
+	</script>
+	<table align="center" border="2" cellpadding="10" cellspacing="0"
+		width="40%">
+		<thead>
+			<tr>
+				<th>KETERANGAN</th>
+				<th>JUMLAH</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Gaji pokok</td>
+				<td>
+					<script language="javascript">
+						if(jabatan=='manager'){
+							gapok=15000000;
+						}
+						else if(jabatan=='assiten manager'){
+							gapok = 10000000;
+						}
+						else if(jabatan=='staff'){
+							gapok= 5000000;
+						}
+						else{
+							gapok= 0;
+						}
+						document.write( gapok);
+					</script>
+				</td>
+			</tr>
+			<tr>
+				<td>tunjangan jabatan</td>
+				<td>
+					<script language="javascript">
+						let tnjgnjbtn = 0.15 + gapok;
+						document.write( tnjgnjbtn);
+					</script>
+				</td>
+			</tr>
+			<tr>
+				<td>BPJS</td>
+				<td>
+					<script language="javascript">
+						let BPJS = 0.1 + gapok;
+						document.write( BPJS);
+					</script>
+				</td>
+			</tr>
+			<tr>
+				<td>Tunjangan Keluarga</td>
+				<td>
+					<script language="javascript">
+						tunkelrga =(status=='menikah')? 0.2 + gapok : 0;
+						document.write( tunkelrga);
+					</script>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr align="left">
+				<th >Total seluruh gaji</th>
+				<th>
+					<script language="javascript">
+						subtotal = gapok + tnjgnjbtn + BPJS + tunkelrga;
+						document.write( subtotal);
+					</script>
+				</th>
+			</tr>
+		</tfoot>
+	</table>
+</body>
