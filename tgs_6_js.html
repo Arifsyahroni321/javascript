@@ -1,0 +1,67 @@
+<h3 align="center">GEMPA</h3>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<table class="table" border="1">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">NO</th>
+        <th scope="col">LOKASI</th>
+        <th scope="col">SKALA GEMPA</th>
+        <th scope="col">DAMPAK GEMPA</th>
+      </tr>
+    </thead>
+    <tbody>
+        <script>
+          var no=1;
+            class gempa {
+                constructor(lokasi, skala) {
+                    this.lokasi = lokasi;
+                    this.skala = skala;
+                   
+                }
+
+                getDampak() {
+                    if (this.skala >= 0 && this.skala <= 2) this.dampak = 'Tidak terasa';
+                    else if (this.skala > 2 && this.skala <= 4) this.dampak = 'Bangunan reatak-retak';
+                    else if (this.skala > 4 && this.skala < 6) this.dampak = 'Bangunan roboh';
+                    else if (this.skala >= 6 && this.skala < 101) this.dampak = 'Berpotensi tsunami';
+                    else this.dampak = '';
+
+                    return this.dampak;
+                }
+
+
+                infoGempa() {
+                    document.write(`<tr>
+                        <td>${no++}</td>
+                        <td>${this.lokasi}</td>
+                        <td>${this.skala}</td>
+                        <td>${this.getDampak()}</td>
+                        
+                    </tr>`);
+                }
+            }
+
+            //-------membuat object-----
+            s1 = new gempa('jepang', 3,);
+            s2 = new gempa('tokyo', 10);
+            s3 = new gempa('india', 4);
+            s4 = new gempa('maron', 1);
+            s5 = new gempa('kanada', 2);
+            s6 = new gempa('amerika', 100);
+            s7 = new gempa('china', 100);
+            s8 = new gempa('israel', 100);
+            s9 = new gempa('inggris', 4);
+            s10 = new gempa('belanda', 2);
+
+
+            s1.infoGempa();
+            s2.infoGempa();
+            s3.infoGempa(); s4.infoGempa();
+            s5.infoGempa(); s6.infoGempa();
+            s7.infoGempa(); s8.infoGempa();
+            s9.infoGempa(); s10.infoGempa();
+
+        </script>
+    </tbody>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</table>
